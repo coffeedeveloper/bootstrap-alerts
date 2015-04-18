@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Coffee-Alerts 提示插件</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="page-header">
+      <h1>测试页面</h1>
+    </div>
+    <div class="form">
+      <div class="form-group">
+        <textarea class="form-control" id="info">这里设置提示信息。</textarea>
+      </div>
+
+      <div class="form-group j-btns">
+        <button type="button" class="btn btn-info" data-type="info">显示提示信息 (info)</button>
+        <button type="button" class="btn btn-success" data-type="success">显示成功信息 (success)</button>
+        <button type="button" class="btn btn-danger" data-type="danger">显示错误信息 (danger)</button>
+        <button type="button" class="btn btn-warning" data-type="warning">显示警告信息 (warning)</button>
+        <button type="button" class="btn btn-default" data-type="hide">隐藏提示信息</button>
+      </div>
+
+      <div class="form-group">
+        <div class="alert alert-info alert-dismissible">
+          <button class="close"><span>&times;</span></button>
+          <div>
+            这里是提示信息
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script type="text/javascript"
+    src="bower_components/jquery/dist/jquery.min.js">
+  </script>
+  <script type="text/javascript"
+    src="bower_components/bootstrap/dist/js/bootstrap.min.js">
+  </script>
+  <script type="text/javascript"
+    src="coffee.alerts.js">
+  </script>
+
+  <script type="text/javascript">
+    var alerts = new Alerts({
+      close: function () {
+        alert('close event trigger');
+      },
+      hide: function () {
+        alert('hide event trigger');
+      }
+    });
+
+    $('.j-btns').on('click', 'button', function () {
+      var type = $(this).data('type');
+      if (type == 'hide') {
+        alerts.hide();
+      } else {
+        var msg = $('textarea').val();
+        alerts[type](msg)
+      }
+    });
+  </script>
+</body>
+</html>

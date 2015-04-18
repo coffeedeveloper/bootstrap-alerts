@@ -1,0 +1,22 @@
+{
+  "name": "coffee-alerts",
+  "main": "coffee.alerts.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/coffeedeveloper/coffee.alerts.js",
+  "authors": [
+    "CoffeeDeveloper <coffeedeveloper@gmail.com>"
+  ],
+  "description": "bootstrap alerts plugin",
+  "keywords": [
+    "bootstrap",
+    "alert"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
