@@ -85,6 +85,9 @@
     success: function (msg, cb) {
       this.action('success', msg, cb);
     },
+    error: function (msg, cb) {
+      this.danger(msg, cb);
+    },
     danger: function (msg, cb) {
       this.action('danger', msg, cb);
     },
@@ -108,10 +111,18 @@
       return this;
     },
     show: function (msg, cb) {
-      if (msg) {
+      if (typeof msg === 'object') {
+        var that = this;
+        this.wrapper.html(msg.msg || '');
+        if (msg.delay) {
+          setTimeout(function () {
+            that.hide();
+          }, msg.delay);
+        }
+      } else {
         this.wrapper.html(msg);
       }
-
+      
       this.el[this.effectIn]();
 
       if ($.isFunction(cb)) {
