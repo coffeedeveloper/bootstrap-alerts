@@ -1,10 +1,10 @@
 ;(function (root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    define('Alerts', ['jquery'], function ($) {
-      return (root.Alerts = factory(jQuery));
-    });
-  } else if (typeof exports === 'object') {
+  if (typeof exports === 'object') {
     module.exports = factory(require('jquery'));
+  } else if (typeof define === 'function' && define.amd) {
+    define('Alerts', ['jquery'], function ($) {
+      return (root.Alerts = factory($));
+    });
   } else {
     root.Alerts = factory(jQuery);
   }
