@@ -1,0 +1,26 @@
+{
+  "name": "coffee-alerts",
+  "version": "0.1.0",
+  "description": "alerts plugin base on bootstrap",
+  "main": "coffee.alerts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coffeedeveloper/coffee.alerts.js.git"
+  },
+  "keywords": [
+    "bootstrap",
+    "alert"
+  ],
+  "author": "CoffeeDeveloper",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/coffeedeveloper/coffee.alerts.js/issues"
+  },
+  "homepage": "https://github.com/coffeedeveloper/coffee.alerts.js#readme",
+  "dependencies": {
+    "jquery": "^2.1.4"
+  }
+}
